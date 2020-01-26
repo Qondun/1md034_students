@@ -8,15 +8,15 @@ Before you submit the different parts of your lab, make sure that your project f
 
 ## 01 Git
 
-- [ ] Fork and clone the 1md034_students repository
+- [X] Fork and clone the 1md034_students repository
 
 
 ## 02 HTML
 
-- [ ] Ensure the website loads when opening http://localhost:3000/
+- [X] Ensure the website loads when opening http://localhost:3000/
 
 Create an index.html file which contains:
-- [ ] A title
+- [X] A title
 - [ ] A main headline and two section headlines
 - [ ] Semantic tags that correspond to the parts of your page
 - [ ] A section to select burgers that contains at least three items. Each item has at least:
