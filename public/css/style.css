@@ -2,3 +2,7 @@ body {
     font-family: arial;
     font-size: 18px;
 }
+
+.allergy_text {
+    font-weight: bold;
+}
