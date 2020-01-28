@@ -35,3 +35,11 @@ section {
     padding: 15px;
 }
 
+header img{
+    opacity: 0.6;
+}
+
+header {
+    margin-right: 25px;
+    margin-left: 25px;
+}
