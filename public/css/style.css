@@ -35,11 +35,20 @@ section {
     padding: 15px;
 }
 
-header img{
-    opacity: 0.6;
+header img {
+    opacity: 0.3;
+    width: 100%;
+    height: auto;
+}
+
+header h1 {
+    position: absolute;
+    padding: 190px;
 }
 
 header {
+    padding: 10px;
     margin-right: 25px;
     margin-left: 25px;
+    overflow: hidden;
 }
