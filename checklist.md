@@ -23,7 +23,7 @@ Create an index.html file which contains:
 	- [X] A name
 	- [X] An image
 	- [X] Information about allergies 
-- [ ] A section to collect customer information:
+- [X] A section to collect customer information:
 	- [X] First- and Last Name (in one field)
 	- [X] E-Mail Address
 	- [X] Street
@@ -33,7 +33,7 @@ Create an index.html file which contains:
 
 ## 03 CSS
 
-- [ ] Create style.css and link to it from index.html
+- [X] Create style.css and link to it from index.html
 
 Add the following style/behaviour to your website (mostly in style.css but also requiring changes in index.html):
 - [ ] Define a base line font for your site by putting the style rule on "body"
