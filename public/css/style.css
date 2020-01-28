@@ -15,3 +15,8 @@ body {
 #info_box {
     
 }
+
+button:hover {
+    background: #808080;
+    cursor: pointer;
+}
