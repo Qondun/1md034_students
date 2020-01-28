@@ -11,10 +11,11 @@ body {
 #burger_box {
     color: #ffffff;
     background: #000000;
+    border: 4px dashed;
 }
 
 #info_box {
-    
+    border: 4px dashed;
 }
 
 button {
@@ -31,4 +32,6 @@ table {
 
 section {
     margin: 25px;
+    padding: 15px;
 }
+
