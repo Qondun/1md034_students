@@ -1,6 +1,7 @@
 body {
     font-family: arial;
     font-size: 18px;
+    margin: 0 auto;
 }
 
 .allergy_text {
@@ -19,4 +20,8 @@ body {
 button:hover {
     background: #808080;
     cursor: pointer;
+}
+table {
+    width: 75%;
+    margin: 0 auto;
 }
