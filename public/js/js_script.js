@@ -19,8 +19,20 @@ let vegBurger = new menuItem('Vegan Burger', '300', 'No', 'No', 'https://sweetsi
 
 let baconBurger = new menuItem('Bacon Burger', '5000', 'Yes', 'Yes', 'https://prnewswire2-a.akamaihd.net/p/1893751/sp/189375100/thumbnail/entry_id/0_t9wcri33/def_height/2700/def_width/2700/version/100012/type/1');
 
-document.getElementById("fire").innerHTML = fireBurger.burgerInfo();
-document.getElementById("turkey").innerHTML = turkeyBurger.burgerInfo();
-document.getElementById("cheese").innerHTML = doubleCheese.burgerInfo();
-document.getElementById("veg").innerHTML = vegBurger.burgerInfo();
-document.getElementById("bacon").innerHTML = baconBurger.burgerInfo();
+
+let menu = [fireBurger, turkeyBurger, doubleCheese, vegBurger, baconBurger]; 
+let target = document.getElementById("myID");
+for(var burger of menu){
+	let listItem = document.createElement("li");
+  let allergeneInfo = '';
+  
+  if(burger.gluten == 'Yes'){
+  	allergeneInfo += ' Contains gluten. ';
+  }
+  if(burger.lactose == 'Yes'){
+  	allergeneInfo += ' Contains lactose. ';
+  }
+  let listValue = document.createTextNode(burger.burgerInfo() + allergeneInfo);
+  listItem.appendChild(listValue);
+  target.appendChild(listItem);
+}

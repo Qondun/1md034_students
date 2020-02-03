@@ -19,13 +19,11 @@ let vegBurger = new menuItem('Vegan Burger', '300', 'No', 'No', 'https://sweetsi
 
 let baconBurger = new menuItem('Bacon Burger', '5000', 'Yes', 'Yes', 'https://prnewswire2-a.akamaihd.net/p/1893751/sp/189375100/thumbnail/entry_id/0_t9wcri33/def_height/2700/def_width/2700/version/100012/type/1');
 
+let menu = [fireBurger, turkeyBurger, doubleCheese, vegBurger, baconBurger];
+
 const vm = new Vue({
-	el: '#myID',
+	el: '#burgerList',
   data: {
-  	fireBurger: fireBurger.burgerInfo(),
-    turkeyBurger: turkeyBurger.burgerInfo(),
-    doubleCheese: doubleCheese.burgerInfo(),
-    vegBurger: vegBurger.burgerInfo(),
-    baconBurger: baconBurger.burgerInfo()
+    menu: menu
   }
 })
