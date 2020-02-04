@@ -4,9 +4,9 @@
       <title>BurgerOnline</title>
       <meta charset="utf-8"/>
       <link rel="stylesheet" type="text/css" href="/css/style.css">
-      <script src="https://vuejs.org/js/vue.js"></script>
       <script src="js/js_script.js" defer></script>
-      <script src="js/vue_script.js"></script>
+      <script src="https://vuejs.org/js/vue.js"></script>
+      <script src="js/vue_script.js" defer></script>
     </head>
     <body>
       <main>
@@ -19,6 +19,17 @@
           <p>This is where you execute burger selection</p>
 
           <div id="burgerList">
+            
+            <div id="burgerBox" v-for="burger in menu">
+              
+              <h4>{{ burger.name }}</h4>
+              <img v-bind:src="burger.img" />
+              <p>{{ burger.name}}, {{ burger.calories }} kCal.
+                <span v-if="burger.gluten = 'Yes'"> Contains gluten. </span> 
+                <span v-if="burger.lactose = 'Yes'"> Contains lactose. </span>
+              </p>
+
+            </div>
 
           </div>
 

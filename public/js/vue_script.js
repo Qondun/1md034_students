@@ -1,4 +1,4 @@
-/*function menuItem(name,cal,glu,lac,img){
+function menuItem(name,cal,glu,lac,img){
     this.name = name;
     this.calories = cal;
     this.gluten = glu;
@@ -27,4 +27,3 @@ const vm = new Vue({
     menu: menu
   }
 })
-*/

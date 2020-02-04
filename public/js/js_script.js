@@ -1,4 +1,4 @@
-function menuItem(name,cal,glu,lac,img){
+/*function menuItem(name,cal,glu,lac,img){
     this.name = name;
     this.calories = cal;
     this.gluten = glu;
@@ -43,4 +43,4 @@ for(var burger of menu){
         listItem.appendChild(lactose);
     }
     target.appendChild(listItem);
-}
+}*/
