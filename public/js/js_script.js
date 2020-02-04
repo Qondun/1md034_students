@@ -21,6 +21,7 @@ let baconBurger = new menuItem('Bacon Burger', '5000', 'Yes', 'Yes', 'https://pr
 
 
 let menu = [fireBurger, turkeyBurger, doubleCheese, vegBurger, baconBurger]; 
+
 let target = document.getElementById("burgerList");
 for(var burger of menu){
 	  let listItem = document.createElement("div");
