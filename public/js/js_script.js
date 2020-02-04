@@ -5,7 +5,7 @@ function menuItem(name,cal,glu,lac,img){
     this.lactose = lac;
     this.img = img;
     this.burgerInfo = function() {
-        return 'Name: ' + this.name + ', kCal: ' + this.calories;
+        return this.name + ', ' + this.calories + ' kCal. ';
     }
 }
 
@@ -21,18 +21,26 @@ let baconBurger = new menuItem('Bacon Burger', '5000', 'Yes', 'Yes', 'https://pr
 
 
 let menu = [fireBurger, turkeyBurger, doubleCheese, vegBurger, baconBurger]; 
-let target = document.getElementById("myID");
+let target = document.getElementById("burgerList");
 for(var burger of menu){
-	let listItem = document.createElement("li");
-  let allergeneInfo = '';
-  
-  if(burger.gluten == 'Yes'){
-  	allergeneInfo += ' Contains gluten. ';
-  }
-  if(burger.lactose == 'Yes'){
-  	allergeneInfo += ' Contains lactose. ';
-  }
-  let listValue = document.createTextNode(burger.burgerInfo() + allergeneInfo);
-  listItem.appendChild(listValue);
-  target.appendChild(listItem);
+	  let listItem = document.createElement("div");
+    let textNode = document.createElement("h4");
+    let image = document.createElement("img");
+    image.src = burger.img;
+
+    let listValue = document.createTextNode(burger.burgerInfo());
+    textNode.appendChild(document.createTextNode(burger.name));
+    listItem.appendChild(textNode);
+    listItem.appendChild(image);
+    listItem.appendChild(listValue);
+
+    if(burger.gluten == 'Yes'){
+        let gluten = document.createTextNode('Contains gluten. ');
+        listItem.appendChild(gluten);
+    }
+    if(burger.lactose == 'Yes'){
+        let lactose = document.createTextNode('Contains lactose. ');
+        listItem.appendChild(lactose);
+    }
+    target.appendChild(listItem);
 }

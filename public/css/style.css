@@ -53,8 +53,13 @@ header {
     overflow: hidden;
 }
 
-.wrapper {
+#burgerList {
     display: grid;
     grid-gap: 20px;
     grid-template-columns: 400px 400px 400px;
+}
+
+#burgerList img {
+    width: 400px;
+    height: 400px;
 }
