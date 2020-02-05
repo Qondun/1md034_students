@@ -29,7 +29,7 @@
                 <span v-if="burger.gluten = 'Yes'"> Contains gluten. </span> 
                 <span v-if="burger.lactose = 'Yes'"> Contains lactose. </span>
               </p>
-
+              <input name="selectBurger" type="checkbox" v-bind:value="burger.name" />
             </div>
 
           </div>
@@ -44,38 +44,52 @@
             <form>
               <p>
                 <label for="fullname">Full name</label><br>
-                <input type="text" id="full_name" name="fn" required="required" placeholder="First- and Last name" />
+                <input type="text" id="full_name" name="fn" required="required" v-model="fullname" placeholder="First- and Last name" />
               </p>
               <p>
                 <label for="email">E-mail</label><br>
-                <input type="email" id="email" name="em" required="required" placeholder="E-mail address" />
+                <input type="email" id="email" name="em" required="required" v-model="email" placeholder="E-mail address" />
               </p>
               <p>
                 <label for="street">Street</label><br>
-                <input type="text" id="street" name="st" required="required" placeholder="Street name" />
+                <input type="text" id="street" name="st" required="required" v-model="street" placeholder="Street name" />
               </p>
               <p>
                 <label for="house">House</label><br>
-                <input type="number" min="1" id="house" name="ho" required="required" placeholder="House number" />
+                <input type="number" min="1" id="house" name="ho" required="required" v-model.number="house" placeholder="House number" />
               </p>
               <p>
                 <label for="recipient">Recipient</label><br />
-                <select id="recipient" name = "rcp">
-                  <option selected="selected">Credit card</option>
+                <select id="recipient" name = "rcp" v-model="selected">
+                  <option v-for="option in options" v-bind:value="option.value">
+                    {{ option.text }}
+                  </option>
+                 <!--<option selected="selected">Credit card</option>
                   <option>Swish</option>
                   <option>Cash</option>
-                  <option>Coupon</option>
+                  <option>Coupon</option>-->
                 </select>
               </p>
               <p>
-                <input type="radio" name="gender" value="male"> Male<br>
-                <input type="radio" name="gender" value="female"> Female<br>
-                <input type="radio" name="gender" value="notprovided" checked="checked"> Do not wish to provide
+                <input type="radio" name="gender" value="Male" v-model="picked"> Male<br>
+                <input type="radio" name="gender" value="Female" v-model="picked"> Female<br>
+                <input type="radio" name="gender" value="Not provided" checked="checked" v-model="picked"> Do not wish to provide
               </p>
-              <p>
-                <button type="submit"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Check_mark_23x20_02.svg/1081px-Check_mark_23x20_02.svg.png" width="20" />Send Info </button>
-              </p>
+              <!--<p>
+                <button id="orderButton" type="submit"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Check_mark_23x20_02.svg/1081px-Check_mark_23x20_02.svg.png" width="20" />Send Info </button>
+              </p>-->
             </form>
+            <button id="orderButton" type="submit" v-on:click="getFormValues"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Check_mark_23x20_02.svg/1081px-Check_mark_23x20_02.svg.png" width="20" />Send Info </button>
+            <ul v-if="submitted">
+              <h4>Order information</h4>
+              <li>Name: {{fullname}} </li>
+              <li>Email: {{email}}</li>
+              <li>Address: {{street}} {{house}}</li>
+              <li>Recipient: {{selected}}</li>
+              <li>Gender: {{picked}}</li><br>
+              <h4>Selected burgers</h4>
+              <li v-for="burger in burgerArray"> {{burger}} </li>
+            </ul>
           </section>
         </section>
       </main>

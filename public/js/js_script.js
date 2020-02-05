@@ -44,4 +44,31 @@ for(var burger of menu){
         listItem.appendChild(lactose);
     }
     target.appendChild(listItem);
-}*/
+    }*/
+
+/*let submitFunc = function (){
+    var full_name = document.getElementById('full_name').value;
+    var at = document.getElementById('email').value.indexOf("@");
+    var street = document.getElementById('street').value;
+    var house = document.getElementById('house').value;
+    
+    var e = document.getElementById('recipient');
+    var payMethod = e.options[e.selectedIndex].value;
+    
+    var radio = document.getElementsByName('gender');
+    var radio_val;
+    for(var i = 0; i < radio.length; i++){
+        if(radio[i].checked){
+            radio_val = radio[i].value;
+        }
+    }
+    
+    return [full_name, at, street, house, payMethod, radio_val];
+}
+
+let eventFunc = function (){
+    console.log(submitFunc());
+}
+let myButton = document.getElementById('orderButton');
+myButton.addEventListener("click", eventFunc);
+*/

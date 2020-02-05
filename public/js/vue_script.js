@@ -28,3 +28,37 @@ const vm = new Vue({
       //menu: menu
   }
 })
+
+const vm2 = new Vue({
+    el: '#info_box',
+    data: {
+        submitted: false,
+        burgerArray: [],
+        fullname: '',
+        email: '',
+        street: '',
+        house: '',
+        picked: 'Not provided',
+        selected: 'Credit card',
+        options: [
+            {text: 'Credit card', value: 'Credit card'},
+            {text: 'Swish', value: 'Swish'},
+            {text: 'Cash', value: 'Cash'},
+            {text: 'Coupon', value: 'Coupon'}
+        ]
+    },
+    methods: {
+        getFormValues () {
+            this.submitted = true;
+            this.getBurgers();
+        },
+        getBurgers () {
+            let burgerBoxes = document.getElementsByName('selectBurger');
+            for(var box of burgerBoxes){
+                if(box.checked){
+                    this.burgerArray.push(box.value);
+                }
+            }
+        }
+    }
+})
