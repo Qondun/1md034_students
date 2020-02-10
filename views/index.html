@@ -3,13 +3,13 @@
   <head>
       <title>BurgerOnline</title>
       <meta charset="utf-8"/>
-      <script src="https://vuejs.org/js/vue.js"></script>
+      <link rel="stylesheet" type="text/css" href="/css/style.css">
+      <link rel="stylesheet" href="css/deli-very.css">
       <script src="/socket.io/socket.io.js" defer></script>
       <script type="text/javascript" src="js/menu.js"></script>
       <script src="js/js_script.js" defer></script>
+      <script src="https://vuejs.org/js/vue.js"></script>
       <script src="js/vue_script.js" defer></script>
-      <link rel="stylesheet" href="css/deli-very.css">
-      <link rel="stylesheet" type="text/css" href="/css/style.css">
     </head>
     <body>
       <main>
@@ -28,8 +28,8 @@
               <h4>{{ burger.name }}</h4>
               <img v-bind:src="burger.img" />
               <p>{{ burger.name}}, {{ burger.calories }} kCal.
-                <span v-if="burger.gluten"> Contains gluten. </span> 
-                <span v-if="burger.lactose"> Contains lactose. </span>
+                <span v-if="burger.gluten = 'Yes'"> Contains gluten. </span> 
+                <span v-if="burger.lactose = 'Yes'"> Contains lactose. </span>
               </p>
               <input name="selectBurger" type="checkbox" v-bind:value="burger.name" />
             </div>
@@ -52,22 +52,14 @@
                 <label for="email">E-mail</label><br>
                 <input type="email" id="email" name="em" required="required" v-model="email" placeholder="E-mail address" />
               </p>
-              <!--<p>
-                  <label for="street">Street</label><br>
-                  <input type="text" id="street" name="st" required="required" v-model="street" placeholder="Street name" />
-              </p>
-              <p>
-                <label for="house">House</label><br>
-                <input type="number" min="1" id="house" name="ho" required="required" v-model.number="house" placeholder="House number" />
-              </p>-->
               <p>
                 <label for="recipient">Recipient</label><br />
                 <select id="recipient" name = "rcp" v-model="selected">
                   <option v-for="option in options" v-bind:value="option.value">
                     {{ option.text }}
                   </option>
-                  <!--<option selected="selected">Credit card</option>
-                      <option>Swish</option>
+                 <!--<option selected="selected">Credit card</option>
+                  <option>Swish</option>
                   <option>Cash</option>
                   <option>Coupon</option>-->
                 </select>
@@ -78,10 +70,10 @@
                 <input type="radio" name="gender" value="Not provided" checked="checked" v-model="picked"> Do not wish to provide
               </p>
               <!--<p>
-                  <button id="orderButton" type="submit"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Check_mark_23x20_02.svg/1081px-Check_mark_23x20_02.svg.png" width="20" />Send Info </button>
+                <button id="orderButton" type="submit"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Check_mark_23x20_02.svg/1081px-Check_mark_23x20_02.svg.png" width="20" />Send Info </button>
               </p>-->
             </form>
-            
+
             <div class="view-box">
               <div id="dots" v-on:click="addOrder">
                 <div 
