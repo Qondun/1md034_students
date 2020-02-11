@@ -43,8 +43,6 @@ const vm2 = new Vue({
         burgerArray: [],
         fullname: '',
         email: '',
-        street: '',
-        house: '',
         picked: 'Not provided',
         selected: 'Credit card',
         options: [
@@ -60,6 +58,7 @@ const vm2 = new Vue({
             this.getBurgers();
         },
         getBurgers () {
+            this.burgerArray = [];
             let burgerBoxes = document.getElementsByName('selectBurger');
             for(var box of burgerBoxes){
                 if(box.checked){
@@ -85,6 +84,7 @@ const vm2 = new Vue({
                     y: event.clientY - 10 - offset.y,
                     },*/
                 orderItems: this.burgerArray,
+                customerInfo: [this.fullname, this.email, this.picked, this.selected],
             });
         },
         displayOrder: function(event) {
